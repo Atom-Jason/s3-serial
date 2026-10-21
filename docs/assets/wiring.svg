@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="510" viewBox="0 0 1280 510" role="img" aria-labelledby="title desc">
+  <title id="title">ESP32-S3 — EKT010 — RS485 从站接线</title><desc id="desc">红线 VCC，蓝线 GND，GPIO5 黑线到 RXD，GPIO6 黄线来自 TXD。模块无外接 DE/RE。</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#6d858b"/></marker></defs>
+  <rect width="1280" height="510" rx="18" fill="#f3f7f7"/>
+  <g font-family="Segoe UI,Microsoft YaHei,Arial,sans-serif">
+    <text x="44" y="48" fill="#203d43" font-size="24" font-weight="700">四根 TTL 线，一条 RS485 总线</text>
+    <text x="44" y="77" fill="#748a90" font-size="14">UART1 · TX GPIO5 / RX GPIO6 · 3.3 V 供电 · 无外接方向控制线</text>
+    <rect x="44" y="114" width="280" height="304" rx="15" fill="#103e46"/>
+    <text x="68" y="154" fill="#eaf8f0" font-size="22" font-weight="600">ESP32-S3</text>
+    <text x="68" y="181" fill="#93bbb3" font-size="13">WROOM-1 · UART1</text>
+    <rect x="587" y="114" width="255" height="304" rx="15" fill="#fff" stroke="#d4e2e2"/>
+    <text x="611" y="154" fill="#25454b" font-size="22" font-weight="600">EKT010</text>
+    <text x="611" y="181" fill="#7e9498" font-size="13">TTL TO RS-485</text>
+    <rect x="1030" y="114" width="205" height="304" rx="15" fill="#fff" stroke="#d4e2e2"/>
+    <text x="1054" y="154" fill="#25454b" font-size="22" font-weight="600">RS485 从站</text>
+    <text x="1054" y="181" fill="#7e9498" font-size="13">按设备说明单独供电</text>
+    <g font-family="Consolas,monospace" font-size="16">
+      <g fill="#d2e9de" text-anchor="end"><text x="298" y="235">3V3</text><text x="298" y="282">GND</text><text x="298" y="329">GPIO5 · TX</text><text x="298" y="376">GPIO6 · RX</text></g>
+      <g fill="#36535a"><text x="611" y="235">VCC</text><text x="611" y="282">GND</text><text x="611" y="329">RXD</text><text x="611" y="376">TXD</text></g>
+      <g fill="#36535a" text-anchor="end"><text x="818" y="235">A+</text><text x="818" y="282">B−</text><text x="818" y="376">GND</text></g>
+      <g fill="#36535a"><text x="1054" y="235">A / +</text><text x="1054" y="282">B / −</text><text x="1054" y="376">参考地</text></g>
+    </g>
+    <g stroke-width="4" fill="none"><path d="M324 230H587" stroke="#d85e62"/><path d="M324 277H587" stroke="#4383cb"/><path d="M324 324H587" stroke="#3e4b54"/><path d="M587 371H324" stroke="#d3ad2d"/></g>
+    <g font-size="12" text-anchor="middle"><text x="456" y="218" fill="#b64b51">红 · VCC →</text><text x="456" y="265" fill="#3775bd">蓝 · GND</text><text x="456" y="312" fill="#3e4b54">黑 · 模块输入 →</text><text x="456" y="359" fill="#a5861e">← 黄 · 模块输出</text></g>
+    <g stroke="#589f8d" stroke-width="3" fill="none"><path d="M842 230H1030"/><path d="M842 277H1030"/></g>
+    <path d="M842 371H1030" stroke="#96aab0" stroke-width="2" stroke-dasharray="6 6"/>
+    <text x="936" y="340" fill="#71898e" font-size="12" text-anchor="middle">参考地按从站说明连接</text>
+    <text x="44" y="463" fill="#36565a" font-size="15" font-weight="600">蓝线才是地线，黑线不是地线。B− 是通信信号，不是电源负极。</text>
+    <text x="44" y="488" fill="#7a9195" font-size="12">线色对应本次线束；其他模块以丝印为准。面包板移动后重新核对 GPIO，不能沿用照片孔号。</text>
+  </g>
+</svg>
