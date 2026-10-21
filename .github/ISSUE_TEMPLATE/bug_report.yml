@@ -1,0 +1,35 @@
+name: 缺陷报告
+description: 报告可复现的软件或硬件联调问题
+title: "[Bug] "
+labels: []
+body:
+  - type: input
+    id: version
+    attributes:
+      label: 固件版本
+      description: 从页面和启动日志确认，是否自行修改源码？
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: 硬件与环境
+      description: 开发板、转换模块、GPIO、浏览器、操作系统；请勿填写密码。
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: 复现步骤与预期结果
+    validations:
+      required: true
+  - type: textarea
+    id: serial
+    attributes:
+      label: 串口参数与原始字节
+      description: 波特率、数据位、校验、停止位、TX/RX HEX、是否启用 CRC；演示或真实设备？
+  - type: textarea
+    id: logs
+    attributes:
+      label: 已脱敏日志或截图
+      description: 删除设备密码、Cookie、路由器配置和私人信息，不要上传完整 Flash 备份。
