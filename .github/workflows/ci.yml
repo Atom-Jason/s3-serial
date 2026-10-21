@@ -1,0 +1,36 @@
+name: Checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  host-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Frontend and demo regression
+        run: node --test tests/*.test.mjs
+      - name: UART core regression
+        run: |
+          gcc -std=c11 -Wall -Wextra -Werror -pedantic -O2 -I main main/serial_core.c tests/serial_core_test.c -o /tmp/s3-serial-core-test
+          /tmp/s3-serial-core-test
+      - name: Public release structure
+        run: python3 tools/check_release.py
+  firmware:
+    runs-on: ubuntu-latest
+    container: espressif/idf:v5.5.1
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build ESP32-S3
+        shell: bash
+        run: |
+          . /opt/esp/idf/export.sh
+          idf.py build
